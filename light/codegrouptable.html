@@ -492,20 +492,25 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
+                          <tr th:if="${#lists.isEmpty(List)}" class=""hover-action-trigger btn-reval-trigger position-static>
+                            <td colspan="10">
+                            <p class="fs-0" style="padding-top: 12px;">There are no datal</p>
+                            </td>
+                          </tr>
+                          <tr th:if="${!#lists.isEmpty(list)}" th:each="list : ${list}">
                             <td>
                               <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="2474">
                                 <label class="custom-control-label" for="2474"></label>
                               </div>
                             </td>
+                            <td th:text="${list.cgseq}"></td>
+                            <td th:text="${list.cgUseNy}"></td>
+                            <td th:text="${list.cgAnotherseq}"></td>
+                            <td th:text="${list.cgName}"></td>
+                            <td th:text="${list.cgNameEng}"></td>
                             <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td th:text="${list.cgNum}"></td>
                             <td></td>
                             <td></td>
                           </tr>
